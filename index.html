@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Speaking Journey</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🌱 Speaking Journey</h1>
+
+        <p class="subtitle">
+            Learn English step by step
+        </p>
+
+
+        <!-- WORD LEVEL -->
+
+        <div class="card">
+
+            <h2>Level 1: Words</h2>
+
+            <p>Learn these words:</p>
+
+            <div class="words">
+
+                <span>happy</span>
+                <span>college</span>
+                <span>student</span>
+                <span>coding</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SENTENCE LEVEL -->
+
+        <div class="card">
+
+            <h2>Level 2: Make a Sentence</h2>
+
+            <p>Use these words to make a sentence:</p>
+
+            <div class="word-box">
+                college + student
+            </div>
+
+            <input
+                type="text"
+                id="sentenceInput"
+                placeholder="Write your sentence here..."
+            >
+
+            <button onclick="checkSentence()">
+                Check Sentence
+            </button>
+
+            <p id="result"></p>
+
+        </div>
+
+
+        <!-- NEXT LEVEL -->
+
+        <div class="card locked">
+
+            <h2>🔒 Level 3: Build More Sentences</h2>
+
+            <p>
+                Complete Level 2 to unlock the next level.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
