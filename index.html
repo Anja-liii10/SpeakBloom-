@@ -1,88 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Speaking Journey</title>
+    <title>SpeakBloom | Find Your Voice</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- BACKGROUND -->
+    <div class="background">
 
-        <h1>🌱 Speaking Journey</h1>
+        <!-- SOFT GLOWING BLOBS -->
+        <div class="blob blob-one"></div>
+        <div class="blob blob-two"></div>
+        <div class="blob blob-three"></div>
 
-        <p class="subtitle">
-            Learn English step by step
-        </p>
+
+        <!-- FLOATING WORDS -->
+
+        <div class="floating-word word-one">
+            confidence
+        </div>
+
+        <div class="floating-word word-two">
+            speak
+        </div>
+
+        <div class="floating-word word-three">
+            voice
+        </div>
+
+        <div class="floating-word word-four">
+            learn
+        </div>
+
+        <div class="floating-word word-five">
+            improve
+        </div>
+
+        <div class="floating-word word-six">
+            express
+        </div>
+
+    </div>
 
 
-        <!-- WORD LEVEL -->
+    <!-- MAIN CONTENT -->
 
-        <div class="card">
+    <main class="main-container">
 
-            <h2>Level 1: Words</h2>
+        <!-- BRAND -->
 
-            <p>Learn these words:</p>
-
-            <div class="words">
-
-                <span>happy</span>
-                <span>college</span>
-                <span>student</span>
-                <span>coding</span>
-
-            </div>
-
+        <div class="brand">
+            <span class="brand-icon">🌱</span>
+            <span>SpeakBloom</span>
         </div>
 
 
-        <!-- SENTENCE LEVEL -->
+        <!-- HERO TEXT -->
 
-        <div class="card">
+        <section class="hero">
 
-            <h2>Level 2: Make a Sentence</h2>
-
-            <p>Use these words to make a sentence:</p>
-
-            <div class="word-box">
-                college + student
-            </div>
-
-            <input
-                type="text"
-                id="sentenceInput"
-                placeholder="Write your sentence here..."
-            >
-
-            <button onclick="checkSentence()">
-                Check Sentence
-            </button>
-
-            <p id="result"></p>
-
-        </div>
-
-
-        <!-- NEXT LEVEL -->
-
-        <div class="card locked">
-
-            <h2>🔒 Level 3: Build More Sentences</h2>
-
-            <p>
-                Complete Level 2 to unlock the next level.
+            <p class="small-text">
+                YOUR SPEAKING JOURNEY
             </p>
+
+            <h1>
+                Don't worry about<br>
+                <span>speaking perfectly.</span>
+            </h1>
+
+            <p class="hero-description">
+                Start with a word.
+                Build a sentence.
+                Find your voice.
+            </p>
+
+        </section>
+
+
+        <!-- LOGIN CARD -->
+
+        <section class="login-card">
+
+            <div class="login-header">
+
+                <h2>Welcome back</h2>
+
+                <p>
+                    Continue your journey with SpeakBloom.
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="showPassword"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="options">
+
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Enter SpeakBloom
+                    <span>→</span>
+                </button>
+
+
+                <p id="message"></p>
+
+            </form>
+
+
+            <!-- SIGN UP -->
+
+            <div class="signup">
+
+                <span>
+                    New to SpeakBloom?
+                </span>
+
+                <a href="signup.html">
+                    Create an account
+                </a>
+
+            </div>
+
+        </section>
+
+
+    <!-- VOICE TO WORD ANIMATION -->
+
+<section class="voice-flow">
+
+    <div class="flow-track">
+
+        <!-- SOUND COMING IN -->
+
+        <div class="sound-stream">
+
+            <div class="mini-wave">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- AI TRANSFORMER -->
+
+        <div class="ai-core">
+
+            <div class="ai-ring"></div>
+
+            <div class="ai-center">
+                ✦
+            </div>
+
+        </div>
+
+
+        <!-- WORD COMING OUT -->
+
+        <div class="word-output">
+
+            <span id="changingWord">
+                speak
+            </span>
 
         </div>
 
     </div>
 
 
-    <script src="script.js"></script>
+    <p class="flow-caption">
+        <span class="live-dot"></span>
+        Your voice → better English
+    </p>
+
+</section>
+    </main>
+
+
+    <script src="style.js"></script>
 
 </body>
+
 </html>
