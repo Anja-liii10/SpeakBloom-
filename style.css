@@ -9,7 +9,7 @@
 }
 
 
-body {
+/* body {
     font-family: Arial, Helvetica, sans-serif;
 
     background: #f8f7f1;
@@ -19,13 +19,13 @@ body {
     min-height: 100vh;
 
     overflow-x: hidden;
-}
+} */
 
 
 /* =========================
    BACKGROUND
 ========================= */
-
+/* 
 .background {
     position: fixed;
 
@@ -36,9 +36,36 @@ body {
     pointer-events: none;
 
     z-index: 0;
+} */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 190, 190, .35),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(194, 169, 244, .28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(246, 183, 210, .25),
+            transparent 32%
+        ),
+        #fffaf5;
+
+    color: #17151b;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
 }
-
-
 /* =========================
    SOFT BLOBS
 ========================= */
@@ -230,23 +257,209 @@ body {
    BRAND
 ========================= */
 
+/* =========================================
+   SPEAKBLOOM BRAND
+========================================= */
+
 .brand {
 
     display: flex;
 
     align-items: center;
 
-    gap: 8px;
+    gap: 12px;
 
-    font-size: 24px;
+    margin-bottom: 55px;
+
+    animation: brandAppear 1s ease;
+}
+
+
+.brand-name {
+
+    font-size: 25px;
 
     font-weight: 700;
 
-    letter-spacing: -0.5px;
+    letter-spacing: -0.8px;
 
-    margin-bottom: 55px;
+    background: linear-gradient(
+        90deg,
+        #f05b68,
+        #d94f9d,
+        #7157d9
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
 }
 
+
+/* =========================================
+   CUSTOM BLOOM SYMBOL
+========================================= */
+
+.bloom-logo {
+
+    width: 38px;
+    height: 38px;
+
+    position: relative;
+
+    transform: rotate(-8deg);
+
+    filter:
+        drop-shadow(
+            0 5px 8px rgba(217, 79, 157, 0.18)
+        );
+
+    animation: bloomFloat 3s infinite ease-in-out;
+}
+
+
+.petal {
+
+    position: absolute;
+
+    width: 15px;
+    height: 25px;
+
+    border-radius:
+        80% 20% 70% 30%;
+
+    transform-origin: bottom center;
+}
+
+
+/* coral */
+
+.petal-1 {
+
+    left: 12px;
+    top: 1px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff766f,
+            #ed426c
+        );
+
+    transform: rotate(-38deg);
+}
+
+
+/* pink */
+
+.petal-2 {
+
+    left: 3px;
+    top: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff718e,
+            #d93678
+        );
+
+    transform: rotate(-75deg);
+}
+
+
+/* violet */
+
+.petal-3 {
+
+    left: 17px;
+    top: 5px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #b16ee8,
+            #7651d8
+        );
+
+    transform: rotate(28deg);
+}
+
+
+/* magenta */
+
+.petal-4 {
+
+    left: 9px;
+    top: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f05aa8,
+            #a83d9b
+        );
+
+    transform: rotate(-5deg);
+}
+
+
+/* outer petal */
+
+.petal-5 {
+
+    left: 21px;
+    top: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c879e8,
+            #684bc7
+        );
+
+    transform: rotate(58deg);
+}
+
+
+/* little center */
+
+.bloom-center {
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ffd36a;
+
+    left: 15px;
+    top: 15px;
+
+    box-shadow:
+        0 0 10px rgba(255, 211, 106, .7);
+
+    z-index: 5;
+}
+
+
+@keyframes bloomFloat {
+
+    0%,
+    100% {
+        transform:
+            rotate(-8deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(-3deg)
+            translateY(-3px);
+    }
+}
 
 .brand-icon {
     font-size: 28px;
