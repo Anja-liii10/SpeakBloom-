@@ -451,7 +451,7 @@ body {
 }
 
 
-.password-container button {
+/* .password-container button {
 
     position: absolute;
 
@@ -468,9 +468,431 @@ body {
     cursor: pointer;
 
     font-size: 16px;
+} */
+
+/* =========================================
+   ANIMATED PASSWORD EYE
+========================================= */
+
+.eye-button {
+
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 42px;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
 }
 
 
+/* =========================================
+   EYE CONTAINER
+========================================= */
+
+.eye {
+
+    width: 38px;
+    height: 30px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   EYE SHAPE
+========================================= */
+
+.eye-shape {
+
+    width: 34px;
+    height: 21px;
+
+    border: 2px solid #282333;
+
+    border-radius: 70% 20%;
+
+    transform: rotate(45deg);
+
+    background: rgba(255, 255, 255, 0.95);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        height 0.3s ease,
+        border-radius 0.3s ease;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   IRIS
+========================================= */
+
+.iris {
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-45deg);
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff 0 8%,
+            #8b7cff 9% 28%,
+            #5146e5 45%,
+            #211a49 75%
+        );
+
+    box-shadow:
+        0 0 8px rgba(81, 70, 229, 0.35);
+
+    transition:
+        background 0.5s ease,
+        transform 0.15s ease;
+}
+
+
+/* =========================================
+   PUPIL
+========================================= */
+
+.pupil {
+
+    width: 7px;
+    height: 7px;
+
+    background: #09090d;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    transition:
+        transform 0.15s ease;
+}
+
+
+/* =========================================
+   EYE SHINE
+========================================= */
+
+.eye-shine {
+
+    width: 4px;
+    height: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 2px;
+    left: 3px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   EYELASHES
+========================================= */
+
+.eyelashes {
+
+    position: absolute;
+
+    width: 44px;
+    height: 32px;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+.eyelashes span {
+
+    position: absolute;
+
+    width: 2px;
+    height: 8px;
+
+    background: #282333;
+
+    border-radius: 10px;
+
+    transform-origin: bottom center;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease;
+}
+
+
+/* Individual eyelashes */
+
+.eyelashes span:nth-child(1) {
+
+    left: 5px;
+    top: 7px;
+
+    transform: rotate(-48deg);
+}
+
+
+.eyelashes span:nth-child(2) {
+
+    left: 11px;
+    top: 3px;
+
+    height: 9px;
+
+    transform: rotate(-30deg);
+}
+
+
+.eyelashes span:nth-child(3) {
+
+    left: 18px;
+    top: 1px;
+
+    height: 10px;
+
+    transform: rotate(-10deg);
+}
+
+
+.eyelashes span:nth-child(4) {
+
+    right: 18px;
+    top: 1px;
+
+    height: 10px;
+
+    transform: rotate(10deg);
+}
+
+
+.eyelashes span:nth-child(5) {
+
+    right: 11px;
+    top: 3px;
+
+    height: 9px;
+
+    transform: rotate(30deg);
+}
+
+
+.eyelashes span:nth-child(6) {
+
+    right: 5px;
+    top: 7px;
+
+    transform: rotate(48deg);
+}
+
+
+/* =========================================
+   OPEN EYE
+========================================= */
+
+.eye-button.open .eye-shape {
+
+    transform: rotate(45deg) scale(1.05);
+
+}
+
+
+.eye-button.open .eyelashes span {
+
+    animation: lashMove 2s infinite ease-in-out;
+}
+
+
+@keyframes lashMove {
+
+    0%,
+    100% {
+        filter: none;
+    }
+
+    50% {
+        filter: drop-shadow(0 1px 1px rgba(81,70,229,.25));
+    }
+}
+
+
+/* =========================================
+   CLOSED EYE
+========================================= */
+
+.eye-button.closed .eye-shape {
+
+    height: 3px;
+
+    width: 36px;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    border-top: 2px solid #282333;
+
+    border-bottom: none;
+
+    border-left: none;
+    border-right: none;
+
+    transform:
+        rotate(0deg)
+        translateY(4px);
+}
+
+
+.eye-button.closed .iris {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+}
+
+
+.eye-button.closed .pupil {
+
+    opacity: 0;
+}
+
+
+/* Lashes move down when eye closes */
+
+.eye-button.closed .eyelashes span:nth-child(1) {
+    transform: rotate(-75deg);
+}
+
+.eye-button.closed .eyelashes span:nth-child(2) {
+    transform: rotate(-55deg);
+}
+
+.eye-button.closed .eyelashes span:nth-child(3) {
+    transform: rotate(-25deg);
+}
+
+.eye-button.closed .eyelashes span:nth-child(4) {
+    transform: rotate(25deg);
+}
+
+.eye-button.closed .eyelashes span:nth-child(5) {
+    transform: rotate(55deg);
+}
+
+.eye-button.closed .eyelashes span:nth-child(6) {
+    transform: rotate(75deg);
+}
+
+
+/* =========================================
+   IRIS COLOR ANIMATION
+========================================= */
+
+.eye-button.open .iris {
+
+    animation: irisColor 4s infinite alternate ease-in-out;
+}
+
+
+@keyframes irisColor {
+
+    0% {
+
+        background:
+            radial-gradient(
+                circle,
+                #ffffff 0 8%,
+                #8b7cff 10% 30%,
+                #5146e5 45%,
+                #211a49 75%
+            );
+
+    }
+
+    50% {
+
+        background:
+            radial-gradient(
+                circle,
+                #ffffff 0 8%,
+                #d96db0 10% 30%,
+                #a43e82 45%,
+                #34142c 75%
+            );
+
+    }
+
+    100% {
+
+        background:
+            radial-gradient(
+                circle,
+                #ffffff 0 8%,
+                #69c9c0 10% 30%,
+                #258f91 45%,
+                #123d43 75%
+            );
+
+    }
+}
 /* =========================
    OPTIONS
 ========================= */
