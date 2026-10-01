@@ -279,146 +279,107 @@ body {
    CUSTOM BLOOM SYMBOL
 ========================================= */
 
+/* =========================================
+   SMALLER SPEAKBLOOM LOGO
+========================================= */
+
 .bloom-logo {
-
-    width: 38px;
-    height: 38px;
-
+    width: 32px;
+    height: 32px;
     position: relative;
-
     transform: rotate(-8deg);
-
-    filter:
-        drop-shadow(
-            0 5px 8px rgba(217, 79, 157, 0.18)
-        );
-
     animation: bloomFloat 3s infinite ease-in-out;
 }
 
+/* All petals */
 
 .petal {
-
     position: absolute;
-
-    width: 15px;
-    height: 25px;
-
-    border-radius:
-        80% 20% 70% 30%;
-
+    width: 11px;
+    height: 19px;
+    border-radius: 80% 20% 70% 30%;
     transform-origin: bottom center;
 }
 
-
-/* coral */
+/* Left coral petal */
 
 .petal-1 {
-
-    left: 12px;
+    left: 10px;
     top: 1px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ff766f,
-            #ed426c
-        );
-
+    background: linear-gradient(
+        145deg,
+        #ff766f,
+        #ed426c
+    );
     transform: rotate(-38deg);
 }
 
-
-/* pink */
+/* Left pink petal */
 
 .petal-2 {
-
-    left: 3px;
-    top: 8px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ff718e,
-            #d93678
-        );
-
-    transform: rotate(-75deg);
+    left: 2px;
+    top: 7px;
+    background: linear-gradient(
+        145deg,
+        #ff718e,
+        #d93678
+    );
+    transform: rotate(-72deg);
 }
 
-
-/* violet */
+/* Top violet petal */
 
 .petal-3 {
-
-    left: 17px;
-    top: 5px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #b16ee8,
-            #7651d8
-        );
-
+    left: 14px;
+    top: 3px;
+    background: linear-gradient(
+        145deg,
+        #b16ee8,
+        #7651d8
+    );
     transform: rotate(28deg);
 }
 
-
-/* magenta */
+/* Middle magenta petal */
 
 .petal-4 {
-
-    left: 9px;
+    left: 8px;
     top: 9px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f05aa8,
-            #a83d9b
-        );
-
+    background: linear-gradient(
+        145deg,
+        #f05aa8,
+        #a83d9b
+    );
     transform: rotate(-5deg);
 }
 
-
-/* outer petal */
+/* Right violet petal */
 
 .petal-5 {
-
-    left: 21px;
-    top: 11px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #c879e8,
-            #684bc7
-        );
-
+    left: 18px;
+    top: 8px;
+    background: linear-gradient(
+        145deg,
+        #c879e8,
+        #684bc7
+    );
     transform: rotate(58deg);
 }
 
-
-/* little center */
+/* Center */
 
 .bloom-center {
-
     position: absolute;
-
-    width: 8px;
-    height: 8px;
-
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-
     background: #ffd36a;
 
-    left: 15px;
-    top: 15px;
+    left: 13px;
+    top: 13px;
 
     box-shadow:
-        0 0 10px rgba(255, 211, 106, .7);
+        0 0 7px rgba(255, 211, 106, 0.7);
 
     z-index: 5;
 }
@@ -662,429 +623,212 @@ body {
     font-size: 16px;
 } */
 
-/* =========================================
-   ANIMATED PASSWORD EYE
-========================================= */
+/* 
+
+
+/* =========================
+   PASSWORD EYE
+========================= */
 
 .eye-button {
-
-    position: absolute;
-
-    right: 12px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 48px;
+    width: 58px;
     height: 42px;
-
     border: none;
-
     background: transparent;
-
-    padding: 0;
-
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
+    padding: 0;
+}
 
+/* Main eye area */
+.eye {
+    width: 48px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   OPEN EYE
+========================= */
+
+.eye-shape {
+    width: 44px;
+    height: 25px;
+    border: 2.5px solid #27232b;
+    border-radius: 70% 10% 70% 10%;
+    transform: rotate(45deg);
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+/* Iris */
+.iris {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #f15b6c,
+        #d94f9d,
+        #765bd6
+    );
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Pupil */
+.pupil {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #17151b;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Eye shine */
+.eye-shine {
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+}
+
+/* =========================
+   EYELASHES
+========================= */
+
+.eyelashes {
+    position: absolute;
+    width: 50px;
+    height: 34px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
     z-index: 5;
 }
 
-
-/* =========================================
-   EYE CONTAINER
-========================================= */
-
-.eye {
-
-    width: 38px;
-    height: 30px;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* =========================================
-   EYE SHAPE
-========================================= */
-
-.eye-shape {
-
-    width: 34px;
-    height: 21px;
-
-    border: 2px solid #282333;
-
-    border-radius: 70% 20%;
-
-    transform: rotate(45deg);
-
-    background: rgba(255, 255, 255, 0.95);
-
-    overflow: hidden;
-
-    transition:
-        transform 0.35s ease,
-        height 0.3s ease,
-        border-radius 0.3s ease;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/* =========================================
-   IRIS
-========================================= */
-
-.iris {
-
-    width: 15px;
-    height: 15px;
-
-    border-radius: 50%;
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(-45deg);
-
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #ffffff 0 8%,
-            #8b7cff 9% 28%,
-            #5146e5 45%,
-            #211a49 75%
-        );
-
-    box-shadow:
-        0 0 8px rgba(81, 70, 229, 0.35);
-
-    transition:
-        background 0.5s ease,
-        transform 0.15s ease;
-}
-
-
-/* =========================================
-   PUPIL
-========================================= */
-
-.pupil {
-
-    width: 7px;
-    height: 7px;
-
-    background: #09090d;
-
-    border-radius: 50%;
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    transition:
-        transform 0.15s ease;
-}
-
-
-/* =========================================
-   EYE SHINE
-========================================= */
-
-.eye-shine {
-
-    width: 4px;
-    height: 4px;
-
-    background: white;
-
-    border-radius: 50%;
-
-    position: absolute;
-
-    top: 2px;
-    left: 3px;
-
-    opacity: 0.9;
-}
-
-
-/* =========================================
-   EYELASHES
-========================================= */
-
-.eyelashes {
-
-    position: absolute;
-
-    width: 44px;
-    height: 32px;
-
-    left: 50%;
-    top: 0;
-
-    transform: translateX(-50%);
-
-    z-index: 4;
-
-    pointer-events: none;
-}
-
-
 .eyelashes span {
-
     position: absolute;
-
     width: 2px;
     height: 8px;
-
-    background: #282333;
-
-    border-radius: 10px;
-
+    background: #27232b;
+    border-radius: 5px;
     transform-origin: bottom center;
-
-    transition:
-        transform 0.35s ease,
-        opacity 0.25s ease;
 }
 
-
-/* Individual eyelashes */
+/* Individual lashes */
 
 .eyelashes span:nth-child(1) {
-
-    left: 5px;
-    top: 7px;
-
-    transform: rotate(-48deg);
-}
-
-
-.eyelashes span:nth-child(2) {
-
-    left: 11px;
-    top: 3px;
-
-    height: 9px;
-
-    transform: rotate(-30deg);
-}
-
-
-.eyelashes span:nth-child(3) {
-
-    left: 18px;
-    top: 1px;
-
-    height: 10px;
-
-    transform: rotate(-10deg);
-}
-
-
-.eyelashes span:nth-child(4) {
-
-    right: 18px;
-    top: 1px;
-
-    height: 10px;
-
-    transform: rotate(10deg);
-}
-
-
-.eyelashes span:nth-child(5) {
-
-    right: 11px;
-    top: 3px;
-
-    height: 9px;
-
-    transform: rotate(30deg);
-}
-
-
-.eyelashes span:nth-child(6) {
-
-    right: 5px;
-    top: 7px;
-
-    transform: rotate(48deg);
-}
-
-
-/* =========================================
-   OPEN EYE
-========================================= */
-
-.eye-button.open .eye-shape {
-
-    transform: rotate(45deg) scale(1.05);
-
-}
-
-
-.eye-button.open .eyelashes span {
-
-    animation: lashMove 2s infinite ease-in-out;
-}
-
-
-@keyframes lashMove {
-
-    0%,
-    100% {
-        filter: none;
-    }
-
-    50% {
-        filter: drop-shadow(0 1px 1px rgba(81,70,229,.25));
-    }
-}
-
-
-/* =========================================
-   CLOSED EYE
-========================================= */
-
-.eye-button.closed .eye-shape {
-
-    height: 3px;
-
-    width: 36px;
-
-    border-radius: 50%;
-
-    background: transparent;
-
-    border-top: 2px solid #282333;
-
-    border-bottom: none;
-
-    border-left: none;
-    border-right: none;
-
-    transform:
-        rotate(0deg)
-        translateY(4px);
-}
-
-
-.eye-button.closed .iris {
-
-    opacity: 0;
-
-    transform:
-        translate(-50%, -50%)
-        scale(0);
-}
-
-
-.eye-button.closed .pupil {
-
-    opacity: 0;
-}
-
-
-/* Lashes move down when eye closes */
-
-.eye-button.closed .eyelashes span:nth-child(1) {
-    transform: rotate(-75deg);
-}
-
-.eye-button.closed .eyelashes span:nth-child(2) {
+    left: 4px;
+    top: 2px;
     transform: rotate(-55deg);
 }
 
-.eye-button.closed .eyelashes span:nth-child(3) {
-    transform: rotate(-25deg);
+.eyelashes span:nth-child(2) {
+    left: 11px;
+    top: -2px;
+    height: 9px;
+    transform: rotate(-35deg);
 }
 
-.eye-button.closed .eyelashes span:nth-child(4) {
-    transform: rotate(25deg);
+.eyelashes span:nth-child(3) {
+    left: 20px;
+    top: -4px;
+    height: 10px;
+    transform: rotate(-15deg);
 }
 
-.eye-button.closed .eyelashes span:nth-child(5) {
+.eyelashes span:nth-child(4) {
+    right: 20px;
+    top: -4px;
+    height: 10px;
+    transform: rotate(15deg);
+}
+
+.eyelashes span:nth-child(5) {
+    right: 11px;
+    top: -2px;
+    height: 9px;
+    transform: rotate(35deg);
+}
+
+.eyelashes span:nth-child(6) {
+    right: 4px;
+    top: 2px;
     transform: rotate(55deg);
 }
 
-.eye-button.closed .eyelashes span:nth-child(6) {
-    transform: rotate(75deg);
+/* =========================
+   CLOSED STATE
+========================= */
+
+.eye-button.closed .eye-shape {
+    width: 40px;
+    height: 18px;
+    border: none;
+    border-bottom: 2.5px solid #27232b;
+    border-radius: 0 0 50% 50%;
+    background: transparent;
+    transform: rotate(0deg);
 }
 
+/* Hide iris when closed */
 
-/* =========================================
-   IRIS COLOR ANIMATION
-========================================= */
+.eye-button.closed .iris {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* Arrange lashes nicely when closed */
+
+.eye-button.closed .eyelashes span {
+    height: 7px;
+}
+
+/* =========================
+   OPEN STATE
+========================= */
+
+.eye-button.open .eye-shape {
+    transform: rotate(45deg) scale(1);
+}
 
 .eye-button.open .iris {
+    opacity: 1;
+}
 
-    animation: irisColor 4s infinite alternate ease-in-out;
+/* Little hover effect */
+
+.eye-button:hover .iris {
+    box-shadow: 0 0 10px rgba(217, 79, 157, 0.25);
 }
 
 
-@keyframes irisColor {
-
-    0% {
-
-        background:
-            radial-gradient(
-                circle,
-                #ffffff 0 8%,
-                #8b7cff 10% 30%,
-                #5146e5 45%,
-                #211a49 75%
-            );
-
-    }
-
-    50% {
-
-        background:
-            radial-gradient(
-                circle,
-                #ffffff 0 8%,
-                #d96db0 10% 30%,
-                #a43e82 45%,
-                #34142c 75%
-            );
-
-    }
-
-    100% {
-
-        background:
-            radial-gradient(
-                circle,
-                #ffffff 0 8%,
-                #69c9c0 10% 30%,
-                #258a8b 45%,
-                #123d43 75%
-            );
-
-    }
-}
+/* } */
 /* =========================
    OPTIONS
 ========================= */
