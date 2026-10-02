@@ -185,8 +185,13 @@ loginForm.addEventListener("submit", function (event) {
 
         return;
     }
+    const loginButton = document.querySelector(".login-button");
 
+loginButton.addEventListener("click", function (event) {
+    event.preventDefault();
 
+    window.location.href = "country.html";
+});
     message.textContent =
         "Welcome to SpeakBloom 🌱";
 

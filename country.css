@@ -1,0 +1,562 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf7;
+    color: #17151b;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND BLOBS
+========================================= */
+
+.blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blob-one {
+    width: 300px;
+    height: 300px;
+    background: rgba(241, 91, 108, 0.12);
+    top: -100px;
+    left: -80px;
+}
+
+.blob-two {
+    width: 350px;
+    height: 350px;
+    background: rgba(139, 98, 217, 0.12);
+    right: -120px;
+    bottom: -130px;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.onboarding {
+    position: relative;
+    z-index: 1;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 42px 20px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 35px;
+}
+
+.brand-name {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+
+    background: linear-gradient(
+        90deg,
+        #f15b6c,
+        #d94f9d,
+        #8b62d9
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================
+   BLOOM LOGO
+========================================= */
+
+.bloom-logo {
+    width: 32px;
+    height: 32px;
+    position: relative;
+
+    transform: rotate(-8deg);
+
+    animation: bloomFloat 3s infinite ease-in-out;
+}
+
+.petal {
+    position: absolute;
+
+    width: 11px;
+    height: 19px;
+
+    border-radius: 80% 20% 70% 30%;
+
+    transform-origin: bottom center;
+}
+
+
+/* Petal 1 */
+
+.petal-1 {
+    left: 10px;
+    top: 1px;
+
+    background: linear-gradient(
+        145deg,
+        #ff766f,
+        #ed426c
+    );
+
+    transform: rotate(-38deg);
+}
+
+
+/* Petal 2 */
+
+.petal-2 {
+    left: 2px;
+    top: 7px;
+
+    background: linear-gradient(
+        145deg,
+        #ff718e,
+        #d93678
+    );
+
+    transform: rotate(-72deg);
+}
+
+
+/* Petal 3 */
+
+.petal-3 {
+    left: 14px;
+    top: 3px;
+
+    background: linear-gradient(
+        145deg,
+        #b16ee8,
+        #7651d8
+    );
+
+    transform: rotate(28deg);
+}
+
+
+/* Petal 4 */
+
+.petal-4 {
+    left: 8px;
+    top: 9px;
+
+    background: linear-gradient(
+        145deg,
+        #f05aa8,
+        #a83d9b
+    );
+
+    transform: rotate(-5deg);
+}
+
+
+/* Petal 5 */
+
+.petal-5 {
+    left: 18px;
+    top: 8px;
+
+    background: linear-gradient(
+        145deg,
+        #c879e8,
+        #684bc7
+    );
+
+    transform: rotate(58deg);
+}
+
+
+/* Center */
+
+.bloom-center {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #ffd36a;
+
+    left: 13px;
+    top: 13px;
+
+    box-shadow:
+        0 0 7px rgba(255, 211, 106, 0.7);
+
+    z-index: 5;
+}
+
+
+@keyframes bloomFloat {
+
+    0%,
+    100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-5deg) translateY(-3px);
+    }
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-area {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 35px;
+}
+
+.progress-area span {
+    width: 32px;
+    height: 4px;
+
+    border-radius: 20px;
+
+    background: #eadfe1;
+}
+
+.progress-area span.active {
+    width: 55px;
+
+    background: linear-gradient(
+        90deg,
+        #f15b6c,
+        #d94f9d
+    );
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content {
+    width: 100%;
+    max-width: 600px;
+
+    text-align: center;
+}
+
+
+.globe {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 12px 35px rgba(60, 30, 40, 0.08);
+
+    font-size: 30px;
+
+    animation: globeFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes globeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+.small-heading {
+    color: #a06a80;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+
+h1 {
+    font-size: clamp(36px, 6vw, 54px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+}
+
+h1 span {
+    background: linear-gradient(
+        90deg,
+        #f15b6c,
+        #d94f9d,
+        #8b62d9
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.description {
+    max-width: 430px;
+
+    margin: 0 auto 30px;
+
+    color: #777079;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   COUNTRY CARDS
+========================================= */
+
+.countries {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+
+.country-card {
+    border: 1px solid #eadfe2;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border-radius: 17px;
+
+    padding: 15px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #332d34;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.country-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #e08aa5;
+
+    box-shadow:
+        0 10px 25px rgba(217, 79, 157, 0.10);
+}
+
+
+.country-card.selected {
+    border-color: #d94f9d;
+
+    background: linear-gradient(
+        135deg,
+        rgba(241, 91, 108, 0.08),
+        rgba(139, 98, 217, 0.08)
+    );
+
+    box-shadow:
+        0 8px 25px rgba(217, 79, 157, 0.13);
+}
+
+
+.flag {
+    font-size: 24px;
+}
+
+
+/* =========================================
+   CONTINUE BUTTON
+========================================= */
+
+.continue-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 15px 20px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #f15b6c,
+        #d94f9d,
+        #8b62d9
+    );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    box-shadow:
+        0 12px 25px rgba(217, 79, 157, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.continue-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 30px rgba(217, 79, 157, 0.27);
+}
+
+
+.continue-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+.continue-btn span {
+    font-size: 20px;
+}
+
+
+/* =========================================
+   LATER BUTTON
+========================================= */
+
+.later-btn {
+    margin-top: 14px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #8d7f87;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+
+.later-btn:hover {
+    color: #d94f9d;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .onboarding {
+        padding-top: 28px;
+    }
+
+    .brand {
+        margin-bottom: 25px;
+    }
+
+    .progress-area {
+        margin-bottom: 28px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .countries {
+        gap: 9px;
+    }
+
+    .country-card {
+        padding: 13px 12px;
+        font-size: 13px;
+    }
+
+    .flag {
+        font-size: 21px;
+    }
+}

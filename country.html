@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpeakBloom | About You</title>
+
+    <link rel="stylesheet" href="country.css">
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+
+    <main class="onboarding">
+
+        <!-- Brand -->
+        <div class="brand">
+            <div class="bloom-logo">
+                <span class="petal petal-1"></span>
+                <span class="petal petal-2"></span>
+                <span class="petal petal-3"></span>
+                <span class="petal petal-4"></span>
+                <span class="petal petal-5"></span>
+                <span class="bloom-center"></span>
+            </div>
+
+            <span class="brand-name">SpeakBloom</span>
+        </div>
+
+
+        <!-- Progress -->
+        <div class="progress-area">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="globe">🌍</div>
+
+            <p class="small-heading">A little about you</p>
+
+            <h1>
+                Where do you<br>
+                <span>call home?</span>
+            </h1>
+
+            <p class="description">
+                This helps us make your SpeakBloom experience
+                feel a little more personal.
+            </p>
+
+
+            <!-- Country options -->
+            <div class="countries">
+
+                <button class="country-card" data-country="India">
+                    <span class="flag">🇮🇳</span>
+                    <span>India</span>
+                </button>
+
+                <button class="country-card" data-country="United States">
+                    <span class="flag">🇺🇸</span>
+                    <span>United States</span>
+                </button>
+
+                <button class="country-card" data-country="United Kingdom">
+                    <span class="flag">🇬🇧</span>
+                    <span>United Kingdom</span>
+                </button>
+
+                <button class="country-card" data-country="Canada">
+                    <span class="flag">🇨🇦</span>
+                    <span>Canada</span>
+                </button>
+
+                <button class="country-card" data-country="Australia">
+                    <span class="flag">🇦🇺</span>
+                    <span>Australia</span>
+                </button>
+
+                <button class="country-card" data-country="Other">
+                    <span class="flag">🌎</span>
+                    <span>Other</span>
+                </button>
+
+            </div>
+
+
+            <!-- Continue -->
+            <button id="continueBtn" class="continue-btn" disabled>
+                Continue
+                <span>→</span>
+            </button>
+
+            <button id="laterBtn" class="later-btn">
+                I'll choose later
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="country.js"></script>
+
+</body>
+</html>
