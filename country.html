@@ -41,7 +41,7 @@
 
 
         <!-- Main content -->
-        <section class="content">
+        <!-- <section class="content">
 
             <div class="globe">🌍</div>
 
@@ -58,7 +58,6 @@
             </p>
 
 
-            <!-- Country options -->
             <div class="countries">
 
                 <button class="country-card" data-country="India">
@@ -94,7 +93,6 @@
             </div>
 
 
-            <!-- Continue -->
             <button id="continueBtn" class="continue-btn" disabled>
                 Continue
                 <span>→</span>
@@ -104,7 +102,180 @@
                 I'll choose later
             </button>
 
-        </section>
+        </section> -->
+
+        <section class="content">
+
+    <!-- =========================
+         PAGE 1 : COUNTRY
+    ========================== -->
+
+
+    <section class="content">
+
+    <!-- =========================
+         PAGE 1 : COUNTRY
+    ========================== -->
+
+    <div id="countryStage">
+
+        <div class="globe">🌍</div>
+
+        <p class="small-heading">
+            A little about you
+        </p>
+
+        <h1>
+            Where do you<br>
+            <span>call home?</span>
+        </h1>
+
+        <p class="description">
+            This helps us make your SpeakBloom experience
+            feel a little more personal.
+        </p>
+
+        <div class="countries">
+
+            <button class="country-card" data-country="India">
+                <span class="flag">🇮🇳</span>
+                <span>India</span>
+            </button>
+
+            <button class="country-card" data-country="United States">
+                <span class="flag">🇺🇸</span>
+                <span>United States</span>
+            </button>
+
+            <button class="country-card" data-country="United Kingdom">
+                <span class="flag">🇬🇧</span>
+                <span>United Kingdom</span>
+            </button>
+
+            <button class="country-card" data-country="Canada">
+                <span class="flag">🇨🇦</span>
+                <span>Canada</span>
+            </button>
+
+            <button class="country-card" data-country="Australia">
+                <span class="flag">🇦🇺</span>
+                <span>Australia</span>
+            </button>
+
+            <button class="country-card" data-country="Other">
+                <span class="flag">🌎</span>
+                <span>Other</span>
+            </button>
+
+        </div>
+
+        <button id="continueBtn" class="continue-btn" disabled>
+            Continue
+            <span>→</span>
+        </button>
+
+        <button id="laterBtn" class="later-btn">
+            I'll choose later
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         PAGE 2 : GOAL
+    ========================== -->
+
+    <div id="goalStage" class="goal-stage">
+
+        <!-- Emoji comes first -->
+        <div class="goal-emoji" id="goalEmoji">
+            🎯
+        </div>
+
+        <!-- Text appears after emoji -->
+        <div class="goal-text" id="goalText">
+
+            <p class="small-heading">
+                Your journey, your goal
+            </p>
+
+            <h1>
+                What brings<br>
+                <span>you here?</span>
+            </h1>
+
+            <p class="description">
+                Tell us what you would love to improve
+                so we can shape your SpeakBloom journey.
+            </p>
+
+        </div>
+
+
+        <!-- Options -->
+        <div class="goal-options">
+
+            <button class="goal-card">
+                <span class="goal-icon">💬</span>
+                <span>
+                    <strong>Speak more confidently</strong>
+                    <small>Express yourself without hesitation</small>
+                </span>
+            </button>
+
+            <button class="goal-card">
+                <span class="goal-icon">🎓</span>
+                <span>
+                    <strong>Improve English for studies</strong>
+                    <small>Communicate better in academics</small>
+                </span>
+            </button>
+
+            <button class="goal-card">
+                <span class="goal-icon">💼</span>
+                <span>
+                    <strong>Prepare for interviews</strong>
+                    <small>Build confidence for your career</small>
+                </span>
+            </button>
+
+            <button class="goal-card">
+                <span class="goal-icon">🌍</span>
+                <span>
+                    <strong>Communicate while travelling</strong>
+                    <small>Feel comfortable anywhere</small>
+                </span>
+            </button>
+
+            <button class="goal-card">
+                <span class="goal-icon">🗣️</span>
+                <span>
+                    <strong>Improve my pronunciation</strong>
+                    <small>Speak clearly and naturally</small>
+                </span>
+            </button>
+
+            <button class="goal-card">
+                <span class="goal-icon">✨</span>
+                <span>
+                    <strong>Become better at English</strong>
+                    <small>Grow my overall communication</small>
+                </span>
+            </button>
+
+        </div>
+
+
+        <!-- Page 2 Continue -->
+        <button id="goalContinue" class="continue-btn goal-continue" disabled>
+            Continue
+            <span>→</span>
+        </button>
+
+    </div>
+
+</section>
+
 
     </main>
 

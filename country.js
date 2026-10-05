@@ -1,59 +1,229 @@
-// =========================================
-// COUNTRY SELECTION
-// =========================================
 
-const countryCards = document.querySelectorAll(".country-card");
-const continueBtn = document.getElementById("continueBtn");
-const laterBtn = document.getElementById("laterBtn");
+const countryCards =
+    document.querySelectorAll(".country-card");
+
+const continueBtn =
+    document.getElementById("continueBtn");
+
+const laterBtn =
+    document.getElementById("laterBtn");
+
+const countryStage =
+    document.getElementById("countryStage");
+
+const goalStage =
+    document.getElementById("goalStage");
 
 let selectedCountry = "";
 
 
-// Select country
-countryCards.forEach(function (card) {
+// =========================================
+// COUNTRY SELECTION
+// =========================================
 
-    card.addEventListener("click", function () {
+countryCards.forEach(function(card) {
 
-        // Remove selection from all cards
-        countryCards.forEach(function (item) {
+    card.addEventListener("click", function() {
+
+        // Remove previous selection
+        countryCards.forEach(function(item) {
             item.classList.remove("selected");
         });
 
-        // Select clicked card
+        // Select current country
         card.classList.add("selected");
 
-        // Store country
-        selectedCountry = card.dataset.country;
+        // Store selected country
+        selectedCountry =
+            card.dataset.country;
 
-        // Enable continue button
+        // Enable Continue
         continueBtn.disabled = false;
+
     });
 
 });
 
 
-// Continue
-continueBtn.addEventListener("click", function () {
+// =========================================
+// SHOW GOAL PAGE
+// =========================================
 
-    if (selectedCountry === "") {
-        return;
+function showGoalPage() {
+
+    // Save country
+    localStorage.setItem(
+        "speakbloomCountry",
+        selectedCountry
+    );
+
+
+    // Hide country page
+    countryStage.style.display = "none";
+
+
+    // Show goal stage
+    goalStage.style.display = "block";
+
+
+    // Scroll to top
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    // -------------------------
+    // 1. Emoji appears
+    // -------------------------
+
+    setTimeout(function() {
+
+        document
+            .getElementById("goalEmoji")
+            .classList.add("show");
+
+    }, 100);
+
+
+    // -------------------------
+    // 2. Text appears
+    // -------------------------
+
+    setTimeout(function() {
+
+        document
+            .getElementById("goalText")
+            .classList.add("show");
+
+    }, 400);
+
+
+    // -------------------------
+    // 3. Options appear
+    // -------------------------
+
+    const goalCards =
+        document.querySelectorAll(".goal-card");
+
+    goalCards.forEach(function(card, index) {
+
+        setTimeout(function() {
+
+            card.classList.add("show");
+
+        }, 650 + (index * 120));
+
+    });
+
+
+    // -------------------------
+    // 4. Continue appears
+    // -------------------------
+
+    setTimeout(function() {
+
+        document
+            .getElementById("goalContinue")
+            .classList.add("show");
+
+    }, 650 + (goalCards.length * 120) + 150);
+
+}
+
+
+// =========================================
+// COUNTRY CONTINUE
+// =========================================
+
+continueBtn.addEventListener(
+    "click",
+    function() {
+
+        if (selectedCountry === "") {
+            return;
+        }
+
+        showGoalPage();
+
     }
+);
 
-    // Save country for later use
-    localStorage.setItem("speakbloomCountry", selectedCountry);
 
-    // Move to next onboarding page
-    window.location.href = "goal.html";
+// =========================================
+// CHOOSE LATER
+// =========================================
+
+laterBtn.addEventListener(
+    "click",
+    function() {
+
+        selectedCountry = "Not selected";
+
+        showGoalPage();
+
+    }
+);
+
+
+// =========================================
+// GOAL SELECTION
+// =========================================
+
+const goalCards =
+    document.querySelectorAll(".goal-card");
+
+const goalContinue =
+    document.getElementById("goalContinue");
+
+let selectedGoal = "";
+
+goalCards.forEach(function(card) {
+
+    card.addEventListener("click", function() {
+
+        // Remove previous selection
+        goalCards.forEach(function(item) {
+            item.classList.remove("selected");
+        });
+
+        // Select this goal
+        card.classList.add("selected");
+
+        // Get goal text
+        selectedGoal =
+            card.querySelector("strong").textContent;
+
+        // Enable Continue
+        goalContinue.disabled = false;
+
+    });
 
 });
 
 
-// Skip country selection
-laterBtn.addEventListener("click", function () {
+// =========================================
+// GOAL CONTINUE
+// =========================================
 
-    localStorage.setItem("speakbloomCountry", "Not selected");
+goalContinue.addEventListener(
+    "click",
+    function() {
 
-    // Move to next onboarding page
-    window.location.href = "goal.html";
+        if (selectedGoal === "") {
+            return;
+        }
 
-});
+        localStorage.setItem(
+            "speakbloomGoal",
+            selectedGoal
+        );
+
+        // For now we will use this later
+        // when we create Page 3.
+
+        alert("Goal saved: " + selectedGoal);
+
+    }
+);
+
