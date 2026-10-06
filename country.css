@@ -87,9 +87,11 @@ body {
         #d94f9d,
         #8b62d9
     );
+    background-clip: text;
+-webkit-background-clip: text;
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+color: transparent;
+-webkit-text-fill-color: transparent;
 }
 
 
@@ -343,8 +345,11 @@ h1 span {
         #8b62d9
     );
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+-webkit-background-clip: text;
+
+color: transparent;
+-webkit-text-fill-color: transparent;
 }
 
 
