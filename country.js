@@ -170,60 +170,61 @@ laterBtn.addEventListener(
 // GOAL SELECTION
 // =========================================
 
-const goalCards =
-    document.querySelectorAll(".goal-card");
 
-const goalContinue =
-    document.getElementById("goalContinue");
+/* =========================================
+   GOAL SELECTION — MULTI SELECT
+========================================= */
 
-let selectedGoal = "";
+const goalCards = document.querySelectorAll(".goal-card");
+const goalContinue = document.getElementById("goalContinue");
 
-goalCards.forEach(function(card) {
+let selectedGoals = [];
 
-    card.addEventListener("click", function() {
+goalCards.forEach(function (card) {
+    card.addEventListener("click", function () {
+        const goal = card.querySelector("strong").textContent.trim();
 
-        // Remove previous selection
-        goalCards.forEach(function(item) {
-            item.classList.remove("selected");
-        });
+        if (card.classList.contains("selected")) {
+            card.classList.remove("selected");
 
-        // Select this goal
-        card.classList.add("selected");
+            selectedGoals = selectedGoals.filter(function (item) {
+                return item !== goal;
+            });
+        } else {
+            card.classList.add("selected");
+            selectedGoals.push(goal);
+        }
 
-        // Get goal text
-        selectedGoal =
-            card.querySelector("strong").textContent;
-
-        // Enable Continue
-        goalContinue.disabled = false;
-
+        goalContinue.disabled = selectedGoals.length === 0;
     });
-
 });
+
 
 
 // =========================================
 // GOAL CONTINUE
 // =========================================
 
-goalContinue.addEventListener(
-    "click",
-    function() {
 
-        if (selectedGoal === "") {
-            return;
-        }
+/* =========================================
+   GOAL CONTINUE
+========================================= */
 
-        localStorage.setItem(
-            "speakbloomGoal",
-            selectedGoal
-        );
+goalContinue.addEventListener("click", function () {
 
-        // For now we will use this later
-        // when we create Page 3.
-
-        alert("Goal saved: " + selectedGoal);
-
+    if (selectedGoals.length === 0) {
+        return;
     }
-);
 
+    // Save all selected goals
+    localStorage.setItem(
+        "speakbloomGoals",
+        JSON.stringify(selectedGoals)
+    );
+
+    console.log("Saved goals:", selectedGoals);
+
+    // Page 3 will be connected here later
+    alert("Your goals have been saved!");
+
+});
